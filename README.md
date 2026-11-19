@@ -1,24 +1,60 @@
 # GitHub Copilot 101
 
-An interactive GitHub Copilot orientation presentation by Andrea Griffiths.
+An interactive GitHub employee orientation presented by **Lessley Dennington | Senior Solutions Engineer**.
+The 15-slide deck retains the terminal-green theme and reserves time for a live demo and Q&A within a 45-minute session.
 
 ## View the presentation
 
-[Open the GitHub Pages site](https://andreagriffiths11.github.io/github-copilot-101/)
+Open `index.html` in a browser, or serve this directory with `python3 -m http.server 8000`
+and visit <http://localhost:8000>. No build or package installation is required.
+If publishing with GitHub Pages, serve the repository root; the presentation is self-contained in `index.html`.
 
 Use the arrow keys, space bar, navigation dots, scrolling, or touch gestures to move through the slides. The final slide includes PDF and PowerPoint export controls.
+PDF uses the browser's print dialog; enable background graphics to retain the theme.
+PowerPoint export creates an editable text summary, not a pixel-perfect copy of the interactive slides.
+Google Fonts and the PptxGenJS export library load from external CDNs; check connectivity before presenting.
 
-## Source
+## Session pacing
 
-Adapted from the original [GitHub Copilot 101 gist](https://gist.github.com/AndreaGriffiths11/f9e625a573856fe5b2247e10beee89c3).
+| Elapsed time | Slides | Focus |
+| --- | --- | --- |
+| 00–03 | 1–3 | Welcome, agenda, and poll |
+| 03–10 | 4–11 | Copilot, surfaces, suggestions, CLI, App customizations and automations, cloud agent, and review |
+| 10–18 | 12–13 | Fusion and data handling |
+| 18–35 | 14 | Live demo |
+| 35–43 | 15 | Q&A |
+| 43–45 | 15 | Resources and one workflow to try this week |
 
-Release information is sourced from the GitHub Changelog:
+Keep the concept slides brief. Stop the demo at minute 35 to protect Q&A.
 
-- [Copilot app Customize tab, GA](https://github.blog/changelog/2026-08-25-github-copilot-app-customize-tab-is-generally-available/)
-- [Agent Plugins 1.0, GA](https://github.blog/changelog/2026-08-12-agent-plugins-1-0-in-vscode-copilot-cli-and-the-copilot-app/)
-- [Code review skills and MCP, GA](https://github.blog/changelog/2026-07-29-copilot-code-review-agent-skills-and-mcp-now-generally-available/)
-- [Code review effort levels, GA](https://github.blog/changelog/2026-08-07-copilot-code-review-effort-levels-are-generally-available/)
-- [Cloud agent reasoning controls](https://github.blog/changelog/2026-08-03-customize-the-reasoning-level-for-copilot-cloud-agent/)
-- [Security reviews in the Copilot app, public preview](https://github.blog/changelog/2026-07-14-security-reviews-now-available-in-the-github-copilot-app/)
-- [Shared Copilot agent sessions in Slack, public preview](https://github.blog/changelog/2026-08-21-the-new-github-copilot-experience-in-slack/)
-- [Grok 4.6 in GitHub Copilot](https://github.blog/changelog/2026-08-14-grok-4-6-is-now-available-in-github-copilot/)
+## Demo preparation
+
+- Use a separate, non-sensitive sample repository with a reproducible small bug, a runnable test suite, and a known-good fix. This presentation repository is not the demo application.
+- Confirm employee access, the chosen editor/client, model availability, and applicable internal data-handling rules. Public product documentation does not establish GitHub employee entitlements or internal policy.
+- Rehearse the same task through explanation, a minimal fix plus regression test, and diff/test review. Confirm the regression test fails before the fix and passes afterward. Demonstrate tool approval deliberately; do not grant broad access just to keep the demo moving.
+- Prepare a before/after diff and captured test output as a fallback. If authentication, network access, or generation stalls, use that evidence rather than consuming Q&A.
+- Keep cloud-agent PR creation as a verbal comparison unless it is already prepared; the core demo does not depend on a cloud run completing live.
+
+## Sources and maintenance
+
+Adapted from the original [GitHub Copilot 101 gist](https://gist.github.com/AndreaGriffiths11/f9e625a573856fe5b2247e10beee89c3)
+by Andrea Griffiths; retained here as source attribution, not presenter identity.
+
+Content reviewed against official GitHub documentation on November 17, 2026:
+
+- [GitHub Copilot Agents: responsible use, context, limitations, and permission controls](https://docs.github.com/en/enterprise-cloud@latest/copilot/responsible-use/agents)
+- [Copilot on GitHub.com and GitHub Mobile](https://docs.github.com/en/enterprise-cloud@latest/copilot/concepts/copilot-surfaces/copilot-on-github)
+- [Starting GitHub Copilot cloud agent sessions](https://docs.github.com/en/enterprise-cloud@latest/copilot/how-tos/use-copilot-agents/cloud-agent/start-copilot-sessions)
+- [Using GitHub Copilot CLI](https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli)
+- [About GitHub Copilot agents: CLI and Copilot App](https://docs.github.com/en/enterprise-cloud@latest/copilot/concepts/agent-capabilities/about-agents/about-github-copilot-agents)
+- [About GitHub Copilot Fusion](https://docs.github.com/en/enterprise-cloud@latest/copilot/concepts/models/copilot-fusion)
+- [Customizing the GitHub Copilot app](https://docs.github.com/en/enterprise-cloud@latest/copilot/how-tos/github-copilot-app/customize-github-copilot-app)
+- [Using automations in the GitHub Copilot app](https://docs.github.com/en/enterprise-cloud@latest/copilot/how-tos/github-copilot-app/using-automations)
+- [Choosing a Copilot code review effort level](https://docs.github.com/en/enterprise-cloud@latest/copilot/how-tos/use-copilot-agents/use-code-review#choosing-a-review-effort-level)
+- [Content exclusion and its limitations](https://docs.github.com/en/enterprise-cloud@latest/copilot/concepts/security-governance-and-network-settings/content-exclusion)
+- [Supported AI models](https://docs.github.com/en/enterprise-cloud@latest/copilot/reference/ai-models/supported-models)
+- [Repository custom instructions](https://docs.github.com/en/enterprise-cloud@latest/copilot/how-tos/copilot-on-github/customize-copilot/add-custom-instructions/add-repository-instructions)
+- [Custom agents, skills, and MCP in Copilot CLI](https://docs.github.com/en/enterprise-cloud@latest/copilot/how-tos/copilot-cli/use-copilot-cli/invoke-custom-agents)
+
+The deck intentionally omits usage statistics, a fixed model roster, dated release badges, and blanket
+training/retention guarantees. Recheck live documentation, current terms, and the actual demo setup before reuse.
